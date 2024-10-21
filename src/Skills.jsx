@@ -1,15 +1,35 @@
 import React from "react";
+import { useEffect } from "react";
 
 function Skills() {
+  /* for Animation */
+  useEffect(() => {
+    const observer2 = new IntersectionObserver((entries2) => {
+      entries2.forEach((entry2) => {
+        if (entry2.isIntersecting) {
+          entry2.target.classList.add("showSkills");
+        } else {
+          entry2.target.classList.remove("showSkills");
+        }
+      });
+    });
+    const hiddenElements2 = document.querySelectorAll(".hideSkills");
+    hiddenElements2.forEach((el2) => observer2.observe(el2));
+  });
   return (
     <>
-      <div className="title2 flex w-full font-josefin items-center justify-center bg-background h-24 text-5xl">
-        What i do
+      <div className="hideSkills  pt-28 flex w-full font-josefin flex-col items-center justify-center bg-background h-20 dark:bg-background2">
+        <p className=" text-3xl lg:text-5xl text-paragraph dark:text-headline2">
+          Software Skills
+        </p>
+        <p className=" text-lg lg:text-xl text-slate-500 dark:text-paragraph2">
+          Tools and Frameworks
+        </p>
       </div>
-      <div className="flex justify-start items-start">
-        <div className="container-skills w-1/2">
-          <div className="skill-box">
-            <i class="absolute top-1  left-0  text-headline">
+      <div className="flex justify-center items-center pt-14 flex-col md:flex-row">
+        <div className=" w-3/4 md:w-[40%] bg-background dark:bg-background2 flex flex-col justify-center items-center">
+          <div className="hideSkills skill-box group ">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2  group-hover:text-orange-600 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -22,17 +42,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">HTML</span>
+            <span className="title-skills dark:text-headline2">HTML</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-blue-800 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -45,17 +65,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">CSS</span>
+            <span className="title-skills dark:text-headline2">CSS</span>
 
-            <div className="skill-bar">
-              <span className="skill-per css">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+              <span className="skill-per css ">
                 <span className="tooltip">70%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2  group-hover:text-yellow-400 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -68,17 +88,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">JavaScript</span>
+            <span className="title-skills dark:text-headline2">JavaScript</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per javascript">
                 <span className="tooltip">50%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1  left-0  text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6  text-headline dark:text-headline2  group-hover:text-green-500 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -91,17 +111,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Node JS</span>
+            <span className="title-skills dark:text-headline2">Node JS</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-cyan-400 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -114,17 +134,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">React</span>
+            <span className="title-skills dark:text-headline2">React</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-teal-400 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -137,17 +157,42 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Tailwind</span>
+            <span className="title-skills dark:text-headline2">Tailwind</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per css">
                 <span className="tooltip">70%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="top-1 left-0 text-headline absolute">
+          <div className="hideSkills skill-box group">
+            <i className="top-1 left-0 md:left-6 text-headline dark:text-headline2 absolute  group-hover:text-gray-400 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="3.2em"
+                height="3.2em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M24 18.588a1.53 1.53 0 0 1-1.895-.72l-3.45-4.771l-.5-.667l-4.003 5.444a1.466 1.466 0 0 1-1.802.708l5.158-6.92l-4.798-6.251a1.595 1.595 0 0 1 1.9.666l3.576 4.83l3.596-4.81a1.435 1.435 0 0 1 1.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 0 0 0 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27c1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.08 4.08 0 0 0 2.582-2.876c.207-.666.548-.78 1.174-.588a5.42 5.42 0 0 1-2.589 3.957a6.27 6.27 0 0 1-7.306-.933a6.58 6.58 0 0 1-1.64-3.858c0-.235-.08-.455-.134-.666A88 88 0 0 1 0 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278c-2.882-.04-4.944 2.094-5.071 5.264z"
+                />
+              </svg>
+            </i>
+            <span className="title-skills dark:text-headline2">Express JS</span>
+
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+              <span className="skill-per react">
+                <span className="tooltip">30%</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-3/4 md:w-[40%] bg-background dark:bg-background2  flex flex-col justify-center items-center">
+          <div className="hideSkills skill-box group">
+            <i className="top-1 left-0 md:left-6 text-headline dark:text-headline2 absolute  group-hover:text-green-600 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -156,25 +201,23 @@ function Skills() {
               >
                 <path
                   fill="currentColor"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M7.869.162a.5.5 0 0 0-.738 0l-2.63 2.87a5.5 5.5 0 0 0-.271 7.115L7 13.673V15h1v-1.327l2.77-3.526a5.5 5.5 0 0 0-.27-7.114zM8 3a.5.5 0 0 0-1 0v7.5a.5.5 0 0 0 1 0z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             </i>
-            <span className="title-skills">MongoDB</span>
+            <span className="title-skills dark:text-headline2">MongoDB</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
-        </div>
 
-        <div className="container-skills w-1/2">
-          <div className="skill-box">
-            <i class="top-1 left-0 text-headline absolute">
+          <div className="hideSkills skill-box group">
+            <i className="top-1 left-0 md:left-6 text-headline dark:text-headline2 absolute  group-hover:text-red-600 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -187,17 +230,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Java</span>
+            <span className="title-skills dark:text-headline2">Java</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-green-500 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -210,17 +253,19 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Spring Boot</span>
+            <span className="title-skills dark:text-headline2">
+              Spring Boot
+            </span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-cyan-800 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -233,17 +278,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">MySql</span>
+            <span className="title-skills dark:text-headline2">MySql</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1  left-0  text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1  left-0 md:left-6  text-headline dark:text-headline2 group-hover:text-black transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -256,17 +301,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Github</span>
+            <span className="title-skills dark:text-headline2">Github</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-blue-900 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -279,17 +324,17 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Microsoft</span>
+            <span className="title-skills dark:text-headline2">Microsoft</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
 
-          <div className="skill-box">
-            <i class="absolute top-1 left-0 text-headline">
+          <div className="hideSkills skill-box group">
+            <i className="absolute left-0 md:left-6 text-headline dark:text-headline2 group-hover:text-blue-800 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="3.2em"
@@ -306,36 +351,11 @@ function Skills() {
                 />
               </svg>
             </i>
-            <span className="title-skills">Photoshop</span>
+            <span className="title-skills dark:text-headline2">Photoshop</span>
 
-            <div className="skill-bar">
+            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
               <span className="skill-per css">
                 <span className="tooltip">70%</span>
-              </span>
-            </div>
-          </div>
-
-          <div className="skill-box invisible">
-            <i class="top-1 left-0 text-headline absolute">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="3.2em"
-                height="3.2em"
-                viewBox="0 0 15 15"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M7.869.162a.5.5 0 0 0-.738 0l-2.63 2.87a5.5 5.5 0 0 0-.271 7.115L7 13.673V15h1v-1.327l2.77-3.526a5.5 5.5 0 0 0-.27-7.114zM8 3a.5.5 0 0 0-1 0v7.5a.5.5 0 0 0 1 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </i>
-            <span className="title-skills">MongoDB</span>
-
-            <div className="skill-bar">
-              <span className="skill-per react">
-                <span className="tooltip">30%</span>
               </span>
             </div>
           </div>

@@ -22,7 +22,6 @@ function Home() {
   useEffect(() => {
     const observer2 = new IntersectionObserver((entries2) => {
       entries2.forEach((entry2) => {
-        console.log(entry2);
         if (entry2.isIntersecting) {
           entry2.target.classList.add("showHome");
         } else {
@@ -35,26 +34,31 @@ function Home() {
   });
 
   return (
-    <div className="relative bg-background flex flex-row justify-evenly items-center w-full pt-20">
-      <div className="relative flex justify-start flex-col bg-background">
-        <h1 className="hideHome text-5xl font-kaushan text-headline">Hi!</h1>
-        <h2 className="hideHome mt-10 font-josefin text-5xl text-headline max-sm:text-[72px] max-sm:leading-[82px] font-bold">
-          <span className="xl:bg-white xl:whitespace-nowrap relative pr-10">
-            i'm Arsenio Malinao Jr.
-          </span>
+    <div className=" bg-transparent flex flex-col-reverse md:flex-row pt-28 md:pt-40 flex-wrap justify-evenly items-center ">
+      <div className="flex flex-col items-start justify-center p-8 sm:p-5 md:p-2 lg:p-0">
+        <h1 className="hideHome text-2xl md:text-3xl lg:text-5xl font-kaushan text-headline dark:text-headline2">
+          Hi!
+        </h1>
+        <h2 className="hideHome mt-10 font-josefin text-2xl md:text-3xl lg:text-5xl text-headline dark:text-headline2 font-bold">
+          <span className="relative pr-10">i'm Arsenio Malinao Jr.</span>
         </h2>
-        <h3 className="hideHome font-josefin font-bold inline-block text-5xl mt-5 text-headline">
-          A <span className="text-tertiary2">{texts}</span>
-          <span className="text-tertiary2">
+        <h3 className="hideHome font-josefin font-bold inline-block text-2xl md:text-3xl lg:text-5xl mt-5 text-headline dark:text-headline2">
+          A <span className="text-tertiary2 dark:text-tertiary">{texts}</span>
+          <span className="text-tertiary2 dark:text-tertiary">
             <Cursor />
           </span>
         </h3>
-        <p className="hideHome font-padauk text-paragraph text-lg leading-8 mt-3 sm:max-w-sm">
+        <p className="hideHome font-padauk text-paragraph dark:text-headline2 text-lg leading-8 mt-3 sm:max-w-sm">
           "i'm motivated by a profound passion for technology and a strong
           willingness to learn."
         </p>
-        <button className="hideHome buttonCV mt-7">Download CV</button>
-        <div className="hideHome mt-7 flex flex-row gap-3 text-headline iconsHome">
+
+        <div className="hideHome mt-7">
+          <button className="buttonCV text-xs sm:text-sm md:text-base lg:text-xl  dark:bg-button2 dark:text-headline2 dark:border-button2 dark:hover:text-paragraph ">
+            Download CV
+          </button>
+        </div>
+        <div className="hideHome mt-7 flex flex-row gap-3 text-headline dark:text-background">
           <i className="homeIcon1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -110,9 +114,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="hideHome bg-secondary2 w-80 h-80 relative justify-center items-center rounded-full border-8 border-headline">
+      <div className="hideHome bg-secondary2 rounded-full border-8 border-headline inline-block overflow-hidden dark:border-headline2 dark:bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900">
         <img
-          className="absolute rounded-full top-10"
+          className="rounded-full w-64 h-64 lg:w-80 lg:h-80 object-cover relative top-5"
           src={mypicture}
           alt="my-picture icon"
         />
