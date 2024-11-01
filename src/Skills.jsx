@@ -18,7 +18,7 @@ function Skills() {
   });
   return (
     <>
-      <div className="hideSkills  pt-28 flex w-full font-josefin flex-col items-center justify-center bg-background h-20 dark:bg-background2">
+      <div className="hideSkills  pt-[70px] flex w-full font-josefin flex-col items-center justify-center">
         <p className=" text-3xl lg:text-5xl text-paragraph dark:text-headline2">
           Software Skills
         </p>
@@ -26,8 +26,8 @@ function Skills() {
           Tools and Frameworks
         </p>
       </div>
-      <div className="flex justify-center items-center pt-14 flex-col md:flex-row">
-        <div className=" w-3/4 md:w-[40%] bg-background dark:bg-background2 flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center pt-4 flex-col md:flex-row">
+        <div className=" w-3/4 md:w-[40%] flex flex-col justify-center items-center">
           <div className="hideSkills skill-box group ">
             <i className="absolute top-1 left-0 md:left-6 text-headline dark:text-headline2  group-hover:text-orange-600 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
@@ -44,7 +44,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">HTML</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
@@ -67,7 +67,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">CSS</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per css ">
                 <span className="tooltip">70%</span>
               </span>
@@ -90,7 +90,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">JavaScript</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per javascript">
                 <span className="tooltip">50%</span>
               </span>
@@ -113,7 +113,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Node JS</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
@@ -136,7 +136,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">React</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -159,7 +159,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Tailwind</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per css">
                 <span className="tooltip">70%</span>
               </span>
@@ -182,7 +182,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Express JS</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -190,7 +190,7 @@ function Skills() {
           </div>
         </div>
 
-        <div className="w-3/4 md:w-[40%] bg-background dark:bg-background2  flex flex-col justify-center items-center">
+        <div className="w-3/4 md:w-[40%] flex flex-col justify-center items-center">
           <div className="hideSkills skill-box group">
             <i className="top-1 left-0 md:left-6 text-headline dark:text-headline2 absolute  group-hover:text-green-600 transition-colors transform group-hover:-translate-y-2 group-hover:scale-125 duration-300">
               <svg
@@ -209,7 +209,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">MongoDB</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -232,7 +232,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Java</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -257,7 +257,7 @@ function Skills() {
               Spring Boot
             </span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -280,7 +280,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">MySql</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -303,7 +303,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Github</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per html">
                 <span className="tooltip">90%</span>
               </span>
@@ -326,7 +326,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Microsoft</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
                 <span className="tooltip">30%</span>
               </span>
@@ -353,7 +353,7 @@ function Skills() {
             </i>
             <span className="title-skills dark:text-headline2">Photoshop</span>
 
-            <div className="skill-bar shadow-custom-dark dark:border-background dark:shadow-custom-light">
+            <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per css">
                 <span className="tooltip">70%</span>
               </span>

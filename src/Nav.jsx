@@ -4,7 +4,9 @@ import sunDark from "./assets/icons/sun-dark.png";
 import moonLight from "./assets/icons/moon-light.png";
 import moonDark from "./assets/icons/moon-dark.png";
 import portfolioLogo from "./assets/images/portfolio-logo.png";
+import portfolioLogo2 from "./assets/images/portfolio-logo2.png";
 import hamburger from "./assets/icons/hamburger-menu.png";
+import hamburger2 from "./assets/icons/hamburger-menu2.png";
 import { useEffect, useState, useContext } from "react";
 import { useAppContext } from "./AppContext";
 
@@ -59,18 +61,6 @@ function Nav() {
     };
   }, []);
 
-  // On component mount, check for saved theme preference in localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
   // Toggle dark mode on and off
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -87,7 +77,7 @@ function Nav() {
       <header
         className={`${
           isVisible ? "opacity-100" : "opacity-0"
-        } bg-background dark:bg-opacity-10 dark:backdrop-blur-md dark:shadow-custom-lighter fixed top-0 z-20 px-8 py-3 w-full transition-opacity duration-300 ease-in-out shadow-lg sm:px-14`}
+        } bg-background dark:bg-black dark:bg-opacity-10 dark:backdrop-blur-sm fixed top-0 z-20 px-8 py-3 w-full transition-opacity duration-300 ease-in-out shadow-lg sm:px-14`}
         style={{ transition: "opacity 1s" }} // Additional transition for smooth hide/show
       >
         <nav className="hideNav flex justify-between items-center w-full">
@@ -95,16 +85,28 @@ function Nav() {
             className="hidden max-lg:block"
             onClick={() => setShowMenu(true)}
           >
-            <img
-              className="rounded hover:bg-amber-100 transition-colors transform hover:scale-125 hover:rounded-full duration-300"
-              src={hamburger}
-              alt="hamburger icon"
-            />
+            {darkMode ? (
+              <img
+                className="rounded hover:bg-orange-300 transition-colors transform hover:scale-125 hover:rounded-full duration-300"
+                src={hamburger2}
+                alt="hamburger icon"
+              />
+            ) : (
+              <img
+                className="rounded hover:bg-amber-100 transition-colors transform hover:scale-125 hover:rounded-full duration-300"
+                src={hamburger}
+                alt="hamburger icon"
+              />
+            )}
           </div>
 
           <div className="absolute left-7">
             <a href="#home">
-              <img src={portfolioLogo} alt="My Logo" />
+              {darkMode ? (
+                <img src={portfolioLogo2} alt="My Logo" />
+              ) : (
+                <img src={portfolioLogo} alt="My Logo" />
+              )}
             </a>
           </div>
 
@@ -149,48 +151,50 @@ function Nav() {
       <div
         className={` ${
           showMenu ? "fixed w-full" : "h-0 w-0"
-        } lg:hidden right-0 top-0 bottom-0 z-50 overflow-hidden bg-white transition-all`}
+        } lg:hidden right-0 top-0 bottom-0 z-50 overflow-hidden dark:bg-gradient-to-r from-black via-gray-900 to-black bg-white transition-all`}
       >
-        <i
-          onClick={() => setShowMenu(false)}
-          className="absolute top-5 right-5 text-headline hover:text-red-700 transition-colors transform hover:scale-125 duration-300"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="2.5em"
-            height="2.5em"
-            viewBox="0 0 24 24"
+        <div className="w-full relative">
+          <i
+            onClick={() => setShowMenu(false)}
+            className="absolute top-5 right-5 text-headline hover:text-red-700 transition-colors transform hover:scale-125 duration-300 dark:text-headline2 dark:hover:text-red-700"
           >
-            <path
-              fill="currentColor"
-              d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
-            />
-          </svg>
-        </i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2.5em"
+              height="2.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+              />
+            </svg>
+          </i>
+        </div>
 
-        <ul className="flex flex-col items-center gap-2 mt-5 px-5 pt-14 text-lg sm:text-xl font-medium text-paragraph">
+        <ul className="flex flex-col items-center gap-2 mt-5 px-5 pt-14 text-lg sm:text-xl font-medium text-paragraph dark:text-headline2">
           <a href="#home" onClick={() => setShowMenu(false)}>
-            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300">
+            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300 dark:hover:bg-orange-400">
               HOME
             </p>
           </a>
           <a href="#experience" onClick={() => setShowMenu(false)}>
-            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300">
+            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300 dark:hover:bg-orange-400">
               EXPERIENCE
             </p>
           </a>
           <a href="#skills" onClick={() => setShowMenu(false)}>
-            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300">
+            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300 dark:hover:bg-orange-400">
               SKILLS
             </p>
           </a>
           <a href="#projects" onClick={() => setShowMenu(false)}>
-            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300">
+            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300 dark:hover:bg-orange-400">
               PROJECTS
             </p>
           </a>
           <a href="#contacts" onClick={() => setShowMenu(false)}>
-            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300">
+            <p className="px-4 py-2 rounded inline-block hover:bg-amber-200 transition-colors transform hover:scale-110 duration-300 dark:hover:bg-orange-400">
               CONTACT ME
             </p>
           </a>

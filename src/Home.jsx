@@ -2,8 +2,14 @@ import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import mypicture from "./assets/images/my-picture.png";
 import { useEffect } from "react";
+import { useAppContext } from "./AppContext";
 
 function Home() {
+  // code for icon links
+  const { socialLinks } = useAppContext();
+  const openLink = (url) => {
+    window.open(url, "_blank");
+  };
   /* Type writer code */
   const [texts] = useTypewriter({
     words: [
@@ -59,7 +65,10 @@ function Home() {
           </button>
         </div>
         <div className="hideHome mt-7 flex flex-row gap-3 text-headline dark:text-background">
-          <i className="homeIcon1">
+          <i
+            onClick={() => openLink(socialLinks.facebook)}
+            className="homeIcon1"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2.5em"
@@ -72,7 +81,10 @@ function Home() {
               />
             </svg>
           </i>
-          <i className="homeIcon2">
+          <i
+            onClick={() => openLink(socialLinks.instagram)}
+            className="homeIcon2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2.5em"
