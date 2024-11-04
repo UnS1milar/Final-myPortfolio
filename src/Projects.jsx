@@ -3,8 +3,15 @@ import project1 from "./assets/images/project1.png";
 import project2 from "./assets/images/project2.png";
 import project3 from "./assets/images/project3.png";
 import { useEffect } from "react";
+import { useAppContext } from "./AppContext";
 
 function App() {
+  // code for icon links
+  const { socialLinks } = useAppContext();
+  const openLink = (url) => {
+    window.open(url, "_blank");
+  };
+
   /* for Animation */
   useEffect(() => {
     const observer2 = new IntersectionObserver((entries2) => {
@@ -58,11 +65,13 @@ function App() {
                   Express js
                 </div>
               </div>
-              <div className="project-content dark:bg-headline2 dark:bg-opacity-10">
+              <div
+                onClick={() => openLink(socialLinks.prescripto)}
+                className="project-content dark:bg-headline2 dark:bg-opacity-10"
+              >
                 <h1 className="dark:text-button2 text-center">
-                  Image hover effect
+                  Open on Github
                 </h1>
-                <p>Go to github</p>
               </div>
             </div>
           </div>
@@ -101,11 +110,13 @@ function App() {
                   CSS
                 </div>
               </div>
-              <div className="project-content dark:bg-headline2 dark:bg-opacity-10">
+              <div
+                onClick={() => openLink(socialLinks.portfolio)}
+                className="project-content dark:bg-headline2 dark:bg-opacity-10"
+              >
                 <h1 className="dark:text-button2 text-center">
-                  Image hover effect
+                  Open on Github
                 </h1>
-                <p>Go to github</p>
               </div>
             </div>
           </div>
@@ -143,11 +154,13 @@ function App() {
                   CSS
                 </div>
               </div>
-              <div className="project-content dark:bg-headline2 dark:bg-opacity-10 ">
+              <div
+                onClick={() => openLink(socialLinks.nike)}
+                className="project-content dark:bg-headline2 dark:bg-opacity-10 "
+              >
                 <h1 className="dark:text-button2 text-center">
-                  Image hover effect
+                  Open on Github
                 </h1>
-                <p>Go to github</p>
               </div>
             </div>
           </div>

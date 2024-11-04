@@ -3,6 +3,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import mypicture from "./assets/images/my-picture.png";
 import { useEffect } from "react";
 import { useAppContext } from "./AppContext";
+import resume from "./assets/files/Resume.pdf";
 
 function Home() {
   // code for icon links
@@ -60,9 +61,11 @@ function Home() {
         </p>
 
         <div className="hideHome mt-7">
-          <button className="buttonCV text-xs sm:text-sm md:text-base lg:text-xl  dark:bg-button2 dark:text-headline2 dark:border-button2 dark:hover:text-paragraph ">
-            Download CV
-          </button>
+          <a href={resume} download="Arsenio_Malinao_Resume.pdf">
+            <button className="buttonCV text-xs sm:text-sm md:text-base lg:text-xl  dark:bg-button2 dark:text-headline2 dark:border-button2 dark:hover:text-paragraph ">
+              Download CV
+            </button>
+          </a>
         </div>
         <div className="hideHome mt-7 flex flex-row gap-3 text-headline dark:text-background">
           <i
@@ -97,7 +100,7 @@ function Home() {
               />
             </svg>
           </i>
-          <i className="homeIcon3">
+          <i onClick={() => openLink(socialLinks.github)} className="homeIcon3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2.5em"
@@ -110,7 +113,10 @@ function Home() {
               />
             </svg>
           </i>
-          <i className="homeIcon4">
+          <i
+            onClick={() => openLink(socialLinks.linkedin)}
+            className="homeIcon4"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="2.5em"

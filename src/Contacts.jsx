@@ -1,8 +1,15 @@
 import React from "react";
 import contactMe from "./assets/images/contact-me.png";
 import Swal from "sweetalert2";
+import { useAppContext } from "./AppContext";
 
 function Contacts() {
+  // code for icon links
+  const { socialLinks } = useAppContext();
+  const openLink = (url) => {
+    window.open(url, "_blank");
+  };
+
   const swal_key = import.meta.env.VITE_SWAL_ACCESS_KEY;
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -52,7 +59,10 @@ function Contacts() {
             alt=""
           />
           <div className="flex flex-row gap-3 text-headline dark:text-background">
-            <i className="homeIcon1">
+            <i
+              onClick={() => openLink(socialLinks.facebook)}
+              className="homeIcon1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2.5em"
@@ -65,7 +75,10 @@ function Contacts() {
                 />
               </svg>
             </i>
-            <i className="homeIcon2">
+            <i
+              onClick={() => openLink(socialLinks.instagram)}
+              className="homeIcon2"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2.5em"
@@ -78,7 +91,10 @@ function Contacts() {
                 />
               </svg>
             </i>
-            <i className="homeIcon3">
+            <i
+              onClick={() => openLink(socialLinks.github)}
+              className="homeIcon3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2.5em"
@@ -91,7 +107,10 @@ function Contacts() {
                 />
               </svg>
             </i>
-            <i className="homeIcon4">
+            <i
+              onClick={() => openLink(socialLinks.linkedin)}
+              className="homeIcon4"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2.5em"

@@ -15,8 +15,11 @@ export const AppProvider = ({ children }) => {
   const socialLinks = {
     facebook: "https://www.facebook.com/james.kidd.3348",
     instagram: "https://www.instagram.com/cmd.sen/",
-    github: "https://github.com/yourusername",
-    linkedin: "https://www.linkedin.com/in/yourusername",
+    github: "https://github.com/UnS1milar?tab=repositories",
+    linkedin: "https://www.linkedin.com/in/arsenio-malinao-jr-46311328a/",
+    prescripto: "https://github.com/UnS1milar/Final-DoctorAppointmentBooking",
+    portfolio: "https://github.com/UnS1milar/Final-myPortfolio",
+    nike: "https://github.com/UnS1milar/final-NikeFrontend",
   };
 
   return (

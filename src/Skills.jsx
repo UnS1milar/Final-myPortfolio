@@ -69,7 +69,7 @@ function Skills() {
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per css ">
-                <span className="tooltip">70%</span>
+                <span className="tooltip">80%</span>
               </span>
             </div>
           </div>
@@ -92,7 +92,7 @@ function Skills() {
 
             <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per javascript">
-                <span className="tooltip">50%</span>
+                <span className="tooltip">60%</span>
               </span>
             </div>
           </div>
@@ -114,8 +114,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Node JS</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per html">
-                <span className="tooltip">90%</span>
+              <span className="skill-per nodejs">
+                <span className="tooltip">40%</span>
               </span>
             </div>
           </div>
@@ -138,7 +138,7 @@ function Skills() {
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
               <span className="skill-per react">
-                <span className="tooltip">30%</span>
+                <span className="tooltip">45%</span>
               </span>
             </div>
           </div>
@@ -160,8 +160,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Tailwind</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background ">
-              <span className="skill-per css">
-                <span className="tooltip">70%</span>
+              <span className="skill-per tailwind">
+                <span className="tooltip">60%</span>
               </span>
             </div>
           </div>
@@ -184,7 +184,7 @@ function Skills() {
 
             <div className="skill-bar shadow-custom-dark dark:border-background ">
               <span className="skill-per react">
-                <span className="tooltip">30%</span>
+                <span className="tooltip">40%</span>
               </span>
             </div>
           </div>
@@ -210,8 +210,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">MongoDB</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per react">
-                <span className="tooltip">30%</span>
+              <span className="skill-per mongodb">
+                <span className="tooltip">55%</span>
               </span>
             </div>
           </div>
@@ -233,8 +233,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Java</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background ">
-              <span className="skill-per react">
-                <span className="tooltip">30%</span>
+              <span className="skill-per java">
+                <span className="tooltip">35%</span>
               </span>
             </div>
           </div>
@@ -258,7 +258,7 @@ function Skills() {
             </span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per react">
+              <span className="skill-per springboot">
                 <span className="tooltip">30%</span>
               </span>
             </div>
@@ -281,8 +281,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">MySql</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per react">
-                <span className="tooltip">30%</span>
+              <span className="skill-per mysql">
+                <span className="tooltip">40%</span>
               </span>
             </div>
           </div>
@@ -304,8 +304,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Github</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per html">
-                <span className="tooltip">90%</span>
+              <span className="skill-per github">
+                <span className="tooltip">65%</span>
               </span>
             </div>
           </div>
@@ -327,8 +327,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Microsoft</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per react">
-                <span className="tooltip">30%</span>
+              <span className="skill-per microsoft">
+                <span className="tooltip">70%</span>
               </span>
             </div>
           </div>
@@ -354,8 +354,8 @@ function Skills() {
             <span className="title-skills dark:text-headline2">Photoshop</span>
 
             <div className="skill-bar shadow-custom-dark dark:border-background">
-              <span className="skill-per css">
-                <span className="tooltip">70%</span>
+              <span className="skill-per photoshop">
+                <span className="tooltip">30%</span>
               </span>
             </div>
           </div>
