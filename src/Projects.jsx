@@ -70,7 +70,7 @@ function App() {
                 className="project-content dark:bg-headline2 dark:bg-opacity-10"
               >
                 <h1 className="dark:text-button2 text-center">
-                  Open on Github
+                  Open this Website
                 </h1>
               </div>
             </div>
@@ -115,7 +115,7 @@ function App() {
                 className="project-content dark:bg-headline2 dark:bg-opacity-10"
               >
                 <h1 className="dark:text-button2 text-center">
-                  Open on Github
+                  Open this Website
                 </h1>
               </div>
             </div>
@@ -159,7 +159,7 @@ function App() {
                 className="project-content dark:bg-headline2 dark:bg-opacity-10 "
               >
                 <h1 className="dark:text-button2 text-center">
-                  Open on Github
+                  Open this Website
                 </h1>
               </div>
             </div>
