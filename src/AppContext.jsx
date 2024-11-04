@@ -12,14 +12,16 @@ export const useAppContext = () => {
 export const AppProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
+  import.meta.env.VITE_BACKEND_URL;
+
   const socialLinks = {
-    facebook: "https://www.facebook.com/james.kidd.3348",
-    instagram: "https://www.instagram.com/cmd.sen/",
-    github: "https://github.com/UnS1milar?tab=repositories",
-    linkedin: "https://www.linkedin.com/in/arsenio-malinao-jr-46311328a/",
-    prescripto: "https://github.com/UnS1milar/Final-DoctorAppointmentBooking",
-    portfolio: "https://github.com/UnS1milar/Final-myPortfolio",
-    nike: "https://github.com/UnS1milar/final-NikeFrontend",
+    facebook: import.meta.env.VITE_FACEBOOK,
+    instagram: import.meta.env.VITE_INSTAGRAM,
+    github: import.meta.env.VITE_GITHUB,
+    linkedin: import.meta.env.VITE_LINKEDIN,
+    prescripto: import.meta.env.VITE_PRESCRIPTO,
+    portfolio: import.meta.env.VITE_PORTFOLIO,
+    nike: import.meta.env.VITE_NIKE,
   };
 
   return (
