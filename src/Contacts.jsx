@@ -43,10 +43,10 @@ function Contacts() {
   return (
     <>
       <div className="pt-[105px] flex w-full font-josefin flex-col items-center justify-center h-20 mt-5">
-        <p className=" text-3xl lg:text-5xl text-paragraph dark:text-headline2">
+        <p className=" font-bold text-2xl sm:text-3xl lg:text-4xl text-paragraph dark:text-headline2">
           Contact Me
         </p>
-        <p className=" text-lg lg:text-xl text-slate-500 text-center dark:text-paragraph2">
+        <p className=" text-base lg:text-lg text-slate-500 text-center dark:text-paragraph2">
           Please fill out the form below to initiate discussing about potential
           job opportunities
         </p>

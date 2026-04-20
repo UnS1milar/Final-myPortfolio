@@ -28,7 +28,7 @@ function App() {
   });
   return (
     <>
-      <div className="hideProjects text-paragraph flex w-full font-josefin items-center justify-center text-3xl lg:text-5xl pt-20 dark:text-headline2">
+      <div className="hideProjects text-paragraph flex w-full font-josefin items-center justify-center font-bold text-2xl sm:text-3xl lg:text-4xl pt-20 dark:text-headline2">
         My Projects
       </div>
       <div className="w-full grid grid-cols-auto-fit sm:grid-cols-auto pt-5 justify-center gap-y-8 gap-x-8 px-6">

@@ -4,6 +4,16 @@ export default {
   darkMode: "class", // Enable dark mode with a class
   theme: {
     extend: {
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-3px)" },
+        },
+      },
+      animation: {
+        float: "float 4s ease-in-out infinite",
+      },
+
       colors: {
         background: "#fffffe",
         background2: "#0f0e17",

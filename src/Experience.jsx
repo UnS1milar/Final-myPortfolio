@@ -4,6 +4,7 @@ import highschool from "./assets/images/highschool-logo.jpg";
 import college from "./assets/images/college-logo.png";
 import job1 from "./assets/images/job1-logo.png";
 import job2 from "./assets/images/job2-logo.jpg";
+import job3 from "./assets/images/job3-logo.png";
 import { useEffect } from "react";
 
 function Experience() {
@@ -24,10 +25,10 @@ function Experience() {
 
   return (
     <div className="relative">
-      <div className="hideXP w-full bg-gradient-to-r from-white via-blue-50 to-gray-50 pb-4 h-32 top-0 absolute flex justify-center items-end z-10 text-3xl lg:text-5xl text-headline font-josefin dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
+      <div className="hideXP w-full bg-gradient-to-r from-white via-blue-50 to-gray-50 pb-4 h-32 top-0 absolute flex justify-center items-end z-10 text-3xl font-bold lg:text-4xl text-headline font-josefin dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
         Educational Background
       </div>
-      <div className="title2 hideXP absolute max-sm:hidden  bottom-[370px] flex w-full font-josefin items-center justify-center bg-gradient-to-r from-white via-blue-50 to-gray-50 h-24 max-md:bottom-[410px] text-2xl sm:text-3xl lg:text-5xl dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
+      <div className="title2 hideXP absolute max-sm:hidden  bottom-[560px] flex w-full font-josefin font-bold items-center justify-center bg-gradient-to-r from-white via-blue-50 to-gray-50 h-24 max-md:bottom-[610px] text-2xl sm:text-3xl lg:text-4xl dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
         Work Experience
       </div>
       <div className="timeline pt-32">
@@ -117,6 +118,21 @@ function Experience() {
               {`(632)`} 374-8761
             </p>
             <span className="left-container-arrow dark:border-l-background max-sm:dark:border-r-background"></span>
+          </div>
+        </div>
+
+        <div className="container right-container hideXP max-sm:mt-0">
+          <img className="dark:border-background" src={job3} alt="plgi logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30  dark:border-white dark:text-headline2">
+            <h2>Young Achievers' School of Caloocan, Inc.</h2>
+            <small>May 2025-April 2026</small>
+            <h3>IT Administrator</h3>
+            <p className="dark:text-paragraph2">
+              Bagumbong, Caloocan City
+              <br />
+              (02) 8875-8820
+            </p>
+            <span className="right-container-arrow dark:border-r-background"></span>
           </div>
         </div>
 

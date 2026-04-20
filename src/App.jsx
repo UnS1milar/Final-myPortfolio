@@ -4,6 +4,8 @@ import Experience from "./Experience";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
+import Skills2 from "./SkillsToolsToggle";
+import Projects2 from "./Projects2";
 import { useAppContext } from "./AppContext";
 
 function App() {
@@ -26,8 +28,8 @@ function App() {
         <Experience />
       </section>
 
-      <section id="skills">
-        <Skills />
+      <section id="skills" className="scroll-mt-24">
+        <Skills2 />
       </section>
 
       <section id="projects">
