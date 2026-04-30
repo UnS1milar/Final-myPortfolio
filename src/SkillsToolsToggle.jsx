@@ -17,6 +17,7 @@ import canva from "./assets/icons/canva.png";
 import postman from "./assets/icons/postman.png";
 import vite from "./assets/icons/vite.png";
 import vscode from "./assets/icons/vscode.png";
+import tailwind from "./assets/icons/tailwind.png";
 
 const SkillsToolsToggle = () => {
   const skills = [
@@ -30,14 +31,15 @@ const SkillsToolsToggle = () => {
     { name: "Express JS", icon: express },
     { name: "SQL", icon: sql },
     { name: "Spring Boot", icon: springboot },
+    { name: "Tailwind CSS", icon: tailwind },
   ];
 
   const tools = [
-    { name: "Figma", icon: figma },
     { name: "Github", icon: github },
     { name: "Microsoft", icon: microsoft },
     { name: "Photoshop", icon: photoshop },
     { name: "Canva", icon: canva },
+    { name: "Figma", icon: figma },
     { name: "Postman", icon: postman },
     { name: "Vite", icon: vite },
     { name: "VS Code", icon: vscode },

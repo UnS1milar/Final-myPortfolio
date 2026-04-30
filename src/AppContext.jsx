@@ -15,13 +15,15 @@ export const AppProvider = ({ children }) => {
   import.meta.env.VITE_BACKEND_URL;
 
   const socialLinks = {
-    facebook: import.meta.env.VITE_FACEBOOK,
-    instagram: import.meta.env.VITE_INSTAGRAM,
-    github: import.meta.env.VITE_GITHUB,
-    linkedin: import.meta.env.VITE_LINKEDIN,
-    prescripto: import.meta.env.VITE_PRESCRIPTO,
-    portfolio: import.meta.env.VITE_PORTFOLIO,
-    nike: import.meta.env.VITE_NIKE,
+    facebook: "https://www.facebook.com/james.kidd.3348/",
+    instagram: "https://www.instagram.com/cmd.sen?igsh=MWF2c25zMTZkODQ1Mw==",
+    github: "https://github.com/UnS1milar",
+    linkedin: "https://www.linkedin.com/in/arsenio-malinao-jr-46311328a/",
+    prescripto: "https://doctorappointmentbooking-frontend.onrender.com",
+    portfolio: "https://final-portfolio-website-1k44.onrender.com",
+    nike: "https://resume-builder-client-roan.vercel.app/",
+    resume:
+      "https://resume-builder-client-roan.vercel.app/view/69ee3d0b063a0e0f82792e89",
   };
 
   return (

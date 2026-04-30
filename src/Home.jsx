@@ -61,11 +61,12 @@ function Home() {
         </p>
 
         <div className="hideHome mt-7">
-          <a href={resume} download="Arsenio_Malinao_Resume.pdf">
-            <button className="buttonCV text-xs sm:text-sm md:text-base lg:text-xl  dark:bg-button2 dark:text-headline2 dark:border-button2 dark:hover:text-paragraph ">
-              Download CV
-            </button>
-          </a>
+          <button
+            onClick={() => openLink(socialLinks.resume)}
+            className="buttonCV text-xs sm:text-sm md:text-base lg:text-xl  dark:bg-button2 dark:text-headline2 dark:border-button2 dark:hover:text-paragraph "
+          >
+            My Resume
+          </button>
         </div>
         <div className="hideHome mt-7 flex flex-row gap-3 text-headline dark:text-background">
           <i
