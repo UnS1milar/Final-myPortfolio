@@ -1,144 +1,118 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import elementary from "./assets/images/elementary-logo.jpg";
 import highschool from "./assets/images/highschool-logo.jpg";
 import college from "./assets/images/college-logo.png";
 import job1 from "./assets/images/job1-logo.png";
 import job2 from "./assets/images/job2-logo.jpg";
 import job3 from "./assets/images/job3-logo.png";
-import { useEffect } from "react";
 
 function Experience() {
-  /* for Animation */
   useEffect(() => {
+    const elements = document.querySelectorAll(".hideXP");
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("showXP");
-        } else {
-          entry.target.classList.remove("showXP");
-        }
+        entry.target.classList.toggle("showXP", entry.isIntersecting);
       });
     });
-    const hiddenElements = document.querySelectorAll(".hideXP");
-    hiddenElements.forEach((el) => observer.observe(el));
-  });
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="relative">
-      <div className="hideXP w-full bg-gradient-to-r from-white via-blue-50 to-gray-50 pb-4 h-32 top-0 absolute flex justify-center items-end z-10 text-3xl font-bold lg:text-4xl text-headline font-josefin dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
-        Educational Background
-      </div>
-      <div className="title2 hideXP absolute max-sm:hidden  bottom-[560px] flex w-full font-josefin font-bold items-center justify-center bg-gradient-to-r from-white via-blue-50 to-gray-50 h-24 max-md:bottom-[610px] text-2xl sm:text-3xl lg:text-4xl dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-headline2">
-        Work Experience
-      </div>
-      <div className="timeline pt-32">
-        <div className="container left-container hideXP ">
-          <img
-            className="dark:border-background"
-            src={elementary}
-            alt="elem logo"
-          />
-          <div className="text-box shadow-custom-dark  dark:bg-black dark:bg-opacity-30 dark:border-white dark:text-headline2 ">
-            <h2>Bagbaguin Elementary School</h2>
-            <small>2004-2010</small>
-            <p className="dark:text-paragraph2">
-              S Manalon Street, Meycauayan, 3020 Bulacan <br />
-              {`(044)`} 720 6810
-            </p>
-            <span className="left-container-arrow dark:border-l-background max-sm:dark:border-r-background"></span>
-          </div>
-        </div>
+    <section className="relative py-20 px-6 md:px-16">
+      {/* TITLE */}
+      <h2 className="hideXP text-center text-3xl md:text-4xl font-bold text-headline dark:text-headline2 mb-16 font-josefin">
+        Educational & Work Experience
+      </h2>
 
-        <div className="container right-container hideXP">
-          <img
-            className="dark:border-background"
-            src={highschool}
-            alt="hs logo"
-          />
-          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30 dark:border-white dark:text-headline2">
-            <h2>Kalalake National Highschool</h2>
-            <small>2010-2014</small>
-            <p className="dark:text-paragraph2">
-              100 E 14th St, Olongapo, 2200 Zambales <br />
-              {`(047)`} 602 4390
-            </p>
-            <span className="right-container-arrow dark:border-r-background"></span>
-          </div>
-        </div>
-
+      <div className="timeline pt-10">
+        {/* ELEMENTARY */}
         <div className="container left-container hideXP">
-          <img
-            className="dark:border-background"
-            src={college}
-            alt="college logo"
-          />
-          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30 dark:border-white dark:text-headline2">
-            <h2>Bestlink College of the Philippines</h2>
+          <img src={elementary} alt="elem logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">Bagbaguin Elementary School</h2>
+            <small>2004-2010</small>
+            <p className="text-paragraph dark:text-paragraph2">
+              S Manalon Street, Meycauayan, Bulacan
+            </p>
+            <span className="left-container-arrow"></span>
+          </div>
+        </div>
+
+        {/* HIGH SCHOOL */}
+        <div className="container right-container hideXP">
+          <img src={highschool} alt="hs logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">Kalalake National High School</h2>
+            <small>2010-2014</small>
+            <p className="text-paragraph dark:text-paragraph2">
+              Olongapo, Zambales
+            </p>
+            <span className="right-container-arrow"></span>
+          </div>
+        </div>
+
+        {/* COLLEGE */}
+        <div className="container left-container hideXP">
+          <img src={college} alt="college logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">
+              Bestlink College of the Philippines
+            </h2>
             <small>2015-2019</small>
             <h3>BS in Information Technology</h3>
-            <p className="dark:text-paragraph2">
-              Quirino Hwy, Novaliches, Quezon City, Metro Manila <br />
-              {`(632)`} 844-28601
+            <p className="text-paragraph dark:text-paragraph2">
+              Quezon City, Metro Manila
             </p>
-            <span className="left-container-arrow dark:border-l-background max-sm:dark:border-r-background"></span>
+            <span className="left-container-arrow"></span>
           </div>
         </div>
 
-        <div className="title2 hideXP hidden max-sm:flex  w-full font-josefin items-center justify-center bg-transparent h-16 text-2xl text-headline dark:text-headline2">
-          Work Experience
-        </div>
-
-        <div className="container right-container hideXP mt-24 max-sm:mt-0">
-          <img className="dark:border-background" src={job1} alt="plgi logo" />
-          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30  dark:border-white dark:text-headline2">
-            <h2>Prime Label Group Inc.</h2>
-            <small>Aug 2020-Feb 2022</small>
+        {/* JOB 1 */}
+        <div className="container right-container hideXP">
+          <img src={job1} alt="job1 logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">Prime Label Group Inc.</h2>
+            <small>Aug 2020 - Feb 2022</small>
             <h3>Invoice Clerk</h3>
-            <p className="dark:text-paragraph2">
-              Speaker perez st. Quezon City <br />
-              8332-9516
-            </p>
-            <span className="right-container-arrow dark:border-r-background"></span>
+            <span className="right-container-arrow"></span>
           </div>
         </div>
 
-        <div className="container left-container hideXP ">
-          <img
-            className="dark:border-background"
-            src={job2}
-            alt="huawei logo"
-          />
-
-          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30 dark:border-white dark:text-headline2">
-            <h2>Huawei Technologies Philippines </h2>
-            <small>March 2022-Sept 2022</small>
+        {/* JOB 2 */}
+        <div className="container left-container hideXP">
+          <img src={job2} alt="job2 logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">
+              Huawei Technologies Philippines
+            </h2>
+            <small>Mar 2022 - Sep 2022</small>
             <h3>Site Engineer</h3>
-            <p className="dark:text-paragraph2">
-              Makati, Metro Manila <br />
-              {`(632)`} 374-8761
-            </p>
-            <span className="left-container-arrow dark:border-l-background max-sm:dark:border-r-background"></span>
+            <span className="left-container-arrow"></span>
           </div>
         </div>
 
-        <div className="container right-container hideXP max-sm:mt-0">
-          <img className="dark:border-background" src={job3} alt="plgi logo" />
-          <div className="text-box shadow-custom-dark dark:bg-black dark:bg-opacity-30  dark:border-white dark:text-headline2">
-            <h2>Young Achievers' School of Caloocan, Inc.</h2>
-            <small>May 2025-April 2026</small>
+        {/* JOB 3 */}
+        <div className="container right-container hideXP">
+          <img src={job3} alt="job3 logo" />
+          <div className="text-box shadow-custom-dark dark:bg-black/30 dark:text-headline2">
+            <h2 className="dark:text-button2">
+              Young Achievers' School of Caloocan
+            </h2>
+            <small>May 2025 - April 2026</small>
             <h3>IT Administrator</h3>
-            <p className="dark:text-paragraph2">
-              Bagumbong, Caloocan City
-              <br />
-              (02) 8875-8820
-            </p>
-            <span className="right-container-arrow dark:border-r-background"></span>
+            <span className="right-container-arrow"></span>
           </div>
         </div>
 
-        <div className="timeline-line hideXP dark:bg-background "></div>
+        {/* LINE */}
+        <div className="timeline-line hideXP"></div>
       </div>
-    </div>
+    </section>
   );
 }
 

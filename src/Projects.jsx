@@ -1,169 +1,163 @@
 import React, { useEffect } from "react";
+
 import project1 from "./assets/images/project1.png";
 import project2 from "./assets/images/project2.png";
 import project3 from "./assets/images/project3.png";
 import { useAppContext } from "./AppContext";
 
-function App() {
+function Projects() {
   const { socialLinks } = useAppContext();
 
-  const openLink = (url) => {
-    window.open(url, "_blank");
-  };
+  const openLink = (url) => window.open(url, "_blank");
 
-  /* tools arrays */
-  const tools1 = ["React js", "Tailwind", "MongoDB", "Express js", "PayPal"];
-  const tools2 = ["React js", "Tailwind", "Node js", "JavaScript", "CSS"];
-  const tools3 = ["React js", "Tailwind", "MongoDB", "Express js", "Gemini AI"];
+  const projects = [
+    {
+      title: "Doctors Appointment Booking",
+      desc: "A web application designed for easy medical appointment scheduling with responsive UI.",
+      tools: [
+        "JavaScript",
+        "React",
+        "Tailwind",
+        "MongoDB",
+        "Express",
+        "PayPal",
+      ],
+      image: project1,
+      link: socialLinks.prescripto,
+    },
+    {
+      title: "Employee Management System",
+      desc: "A comprehensive system for managing employee information and tasks with a user-friendly interface.",
+      tools: [
+        "React",
+        "Tailwind",
+        "Node",
+        "JavaScript",
+        "MongoDB",
+        "Express",
+        "Inngest AI",
+      ],
+      image: project2,
+      link: socialLinks.ems,
+    },
+    {
+      title: "Resume Builder AI",
+      desc: "AI-powered resume builder for generating professional resumes with formatting support.",
+      tools: [
+        "JavaScript",
+        "React",
+        "Tailwind",
+        "MongoDB",
+        "Express",
+        "Gemini AI",
+      ],
+      image: project3,
+      link: socialLinks.resume,
+    },
+  ];
 
-  /* Animation */
   useEffect(() => {
-    const observer2 = new IntersectionObserver((entries2) => {
-      entries2.forEach((entry2) => {
-        if (entry2.isIntersecting) {
-          entry2.target.classList.add("showProjects");
-        } else {
-          entry2.target.classList.remove("showProjects");
-        }
+    const elements = document.querySelectorAll(".hideProjects");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("showProjects", entry.isIntersecting);
       });
     });
 
-    const hiddenElements2 = document.querySelectorAll(".hideProjects");
-    hiddenElements2.forEach((el2) => observer2.observe(el2));
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <>
-      <div className="hideProjects text-paragraph flex w-full font-josefin items-center justify-center font-bold text-2xl sm:text-3xl lg:text-4xl pt-20 dark:text-headline2">
+    <section className="py-20 px-6">
+      {/* TITLE */}
+      <h2 className="hideProjects text-center text-3xl md:text-4xl font-bold font-josefin text-headline dark:text-headline2 mb-12">
         My Projects
+      </h2>
+
+      {/* GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {projects.map((project, i) => (
+          <div
+            key={i}
+            className="
+              hideProjects
+              group
+              rounded-2xl
+              overflow-hidden
+              border border-button/20
+              bg-background
+              dark:bg-background2/40
+              shadow-md
+              hover:shadow-xl
+              hover:-translate-y-2
+              transition-all duration-300
+            "
+          >
+            {/* IMAGE */}
+            <div className="overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover group-hover:scale-105 transition duration-500"
+              />
+            </div>
+
+            {/* CONTENT */}
+            <div className="p-5">
+              <h3 className="text-lg font-bold text-headline dark:text-headline2">
+                {project.title}
+              </h3>
+
+              <p className="text-sm text-paragraph dark:text-paragraph2 mt-2">
+                {project.desc}
+              </p>
+
+              {/* TOOLS */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.tools.map((tool, idx) => (
+                  <span
+                    key={idx}
+                    className="
+                      text-xs
+                      px-3 py-1
+                      rounded-full
+                      border border-button/30
+                      text-paragraph dark:text-paragraph2
+                      bg-background2/10 dark:bg-background/10
+                    "
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+
+              {/* BUTTON */}
+              <button
+                onClick={() => openLink(project.link)}
+                className="
+                  mt-6
+                  w-full
+                  py-2
+                  rounded-lg
+                  bg-button
+                  dark:bg-button2
+                  text-button-text
+                  font-semibold
+                  hover:opacity-90
+                  transition
+                "
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-5 justify-items-center gap-y-8 gap-x-8 px-6">
-        {/* CARD 1 */}
-        <div className="hideProjects relative flex justify-center">
-          <div className="w-[90%] sm:w-[320px] lg:w-auto border rounded-xl overflow-hidden border-headline shadow-custom-darker cursor-pointer hover:translate-y-[-10px] transition-all duration-500 dark:border-headline2">
-            <div className="relative flex flex-col justify-center items-center">
-              <div className="mt-4 mx-5 border border-headline dark:border-headline2 rounded-xl overflow-hidden">
-                <img src={project1} alt="" />
-              </div>
-
-              <p className="text-paragraph text-xl font-medium mt-4 dark:text-headline2">
-                Doctors Appointment Booking
-              </p>
-
-              <p className="text-slate-600 mx-5 text-center text-base mt-2 dark:text-paragraph2">
-                A web application designed to facilitate easy scheduling of
-                medical appointments with a responsive design for seamless user
-                experience across devices.
-              </p>
-
-              <div className="flex justify-center items-center text-base gap-2 w-72 flex-wrap mt-4 mb-8">
-                {tools1.map((tool, index) => (
-                  <div
-                    key={index}
-                    className="bg-blue-500 text-white rounded-full px-3 border border-headline dark:border-headline2"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
-
-              <div
-                onClick={() => openLink(socialLinks.prescripto)}
-                className="project-content dark:bg-headline2 dark:bg-opacity-10"
-              >
-                <h1 className="dark:text-button2 text-center">
-                  Open this Website
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CARD 2 */}
-        <div className="hideProjects relative flex justify-center">
-          <div className="w-[90%] sm:w-[320px] lg:w-auto border rounded-xl overflow-hidden border-headline shadow-custom-darker cursor-pointer hover:translate-y-[-10px] transition-all duration-500 dark:border-headline2">
-            <div className="relative flex flex-col justify-center items-center">
-              <div className="mt-4 mx-5 border border-headline dark:border-headline2 rounded-xl overflow-hidden">
-                <img src={project2} alt="" />
-              </div>
-
-              <p className="text-paragraph text-xl font-medium mt-4 dark:text-headline2">
-                Portfolio Website
-              </p>
-
-              <p className="text-slate-600 mx-5 text-center text-base mt-2 dark:text-paragraph2">
-                Responsive portfolio website built with React, Node.js, and
-                Tailwind CSS. Features a dark mode toggle, animations for
-                enhanced user experience.
-              </p>
-
-              <div className="flex justify-center items-center text-base gap-2 w-72 flex-wrap mt-4 mb-8">
-                {tools2.map((tool, index) => (
-                  <div
-                    key={index}
-                    className="bg-blue-500 text-white rounded-full px-3 border border-headline dark:border-headline2"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
-
-              <div
-                onClick={() => openLink(socialLinks.portfolio)}
-                className="project-content dark:bg-headline2 dark:bg-opacity-10"
-              >
-                <h1 className="dark:text-button2 text-center">
-                  Open this Website
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CARD 3 */}
-        <div className="hideProjects relative flex justify-center">
-          <div className="w-[90%] sm:w-[320px] lg:w-auto border rounded-xl overflow-hidden border-headline shadow-custom-darker cursor-pointer hover:translate-y-[-10px] transition-all duration-500 dark:border-headline2">
-            <div className="relative flex flex-col justify-center items-center">
-              <div className="mt-4 mx-5 border border-headline dark:border-headline2 rounded-xl overflow-hidden">
-                <img src={project3} alt="" />
-              </div>
-
-              <p className="text-paragraph text-xl font-medium mt-4 dark:text-headline2">
-                Resume Builder
-              </p>
-
-              <p className="text-slate-600 mx-5 text-center text-base mt-2 dark:text-paragraph2">
-                Developed an AI-powered Resume Builder web application that
-                allows users to easily create, edit, and format professional
-                resumes.
-              </p>
-
-              <div className="flex justify-center items-center text-base gap-2 w-72 flex-wrap mt-4 mb-8">
-                {tools3.map((tool, index) => (
-                  <div
-                    key={index}
-                    className="bg-blue-500 text-white rounded-full px-3 border border-headline dark:border-headline2"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
-
-              <div
-                onClick={() => openLink(socialLinks.nike)}
-                className="project-content dark:bg-headline2 dark:bg-opacity-10"
-              >
-                <h1 className="dark:text-button2 text-center">
-                  Open this Website
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </section>
   );
 }
 
-export default App;
+export default Projects;

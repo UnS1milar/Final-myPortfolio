@@ -1,18 +1,25 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
-// Create a context for dark mode
 const AppContext = createContext();
 
-// Create a custom hook to easily access the context
-export const useAppContext = () => {
-  return useContext(AppContext);
-};
+export const useAppContext = () => useContext(AppContext);
 
-// Create a provider component
 export const AppProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  // ✅ Load theme from localStorage
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-  import.meta.env.VITE_BACKEND_URL;
+  // ✅ Apply theme whenever it changes
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const socialLinks = {
     facebook: "https://www.facebook.com/james.kidd.3348/",
@@ -20,10 +27,10 @@ export const AppProvider = ({ children }) => {
     github: "https://github.com/UnS1milar",
     linkedin: "https://www.linkedin.com/in/arsenio-malinao-jr-46311328a/",
     prescripto: "https://doctorappointmentbooking-frontend.onrender.com",
-    portfolio: "https://final-portfolio-website-1k44.onrender.com",
-    nike: "https://resume-builder-client-roan.vercel.app/",
-    resume:
-      "https://resume-builder-client-roan.vercel.app/view/69ee3d0b063a0e0f82792e89",
+    ems: "https://fullstack-ems-sandy.vercel.app/",
+    resume: "https://resume-builder-client-roan.vercel.app/",
+    resumeView:
+      "https://drive.google.com/file/d/1HUYGEb9KlkRtPR4QmWEk-bSP9fRR-4VA/view?usp=sharing",
   };
 
   return (

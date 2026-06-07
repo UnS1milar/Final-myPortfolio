@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import java from "./assets/icons/java.png";
 import html from "./assets/icons/html.png";
 import css from "./assets/icons/css.png";
@@ -9,7 +10,6 @@ import mongo from "./assets/icons/mongoDB.png";
 import sql from "./assets/icons/sql.png";
 import express from "./assets/icons/express.png";
 import springboot from "./assets/icons/springboot.png";
-import figma from "./assets/icons/figma.png";
 import github from "./assets/icons/github2.png";
 import microsoft from "./assets/icons/microsoft.png";
 import photoshop from "./assets/icons/photoshop.png";
@@ -35,11 +35,10 @@ const SkillsToolsToggle = () => {
   ];
 
   const tools = [
-    { name: "Github", icon: github },
+    { name: "GitHub", icon: github },
     { name: "Microsoft", icon: microsoft },
     { name: "Photoshop", icon: photoshop },
     { name: "Canva", icon: canva },
-    { name: "Figma", icon: figma },
     { name: "Postman", icon: postman },
     { name: "Vite", icon: vite },
     { name: "VS Code", icon: vscode },
@@ -50,34 +49,38 @@ const SkillsToolsToggle = () => {
   const data = activeTab === "skills" ? skills : tools;
 
   return (
-    <div className="flex items-center justify-center px-4">
+    <section className="flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-5xl text-center">
         {/* TITLE */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-headline dark:text-headline2 font-josefin mb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-headline dark:text-headline2 font-josefin mb-8">
           Skills & Tech Stack
         </h2>
 
         {/* TOGGLE */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-gray-100 p-1 rounded-full flex gap-1">
+        <div className="flex justify-center mb-10">
+          <div className="flex p-1 rounded-full bg-background2/10 dark:bg-background/10 border border-button">
+            {/* SKILLS */}
             <button
               onClick={() => setActiveTab("skills")}
-              className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ${
-                activeTab === "skills"
-                  ? "bg-white shadow text-gray-800"
-                  : "text-gray-500"
-              }`}
+              className={`px-6 py-2 text-sm rounded-full transition-all duration-300 font-semibold
+                ${
+                  activeTab === "skills"
+                    ? "bg-button dark:bg-button2 text-button-text shadow-md"
+                    : "text-paragraph dark:text-paragraph2 hover:text-headline2"
+                }`}
             >
               Skills
             </button>
 
+            {/* TOOLS */}
             <button
               onClick={() => setActiveTab("tools")}
-              className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ${
-                activeTab === "tools"
-                  ? "bg-white shadow text-gray-800"
-                  : "text-gray-500"
-              }`}
+              className={`px-6 py-2 text-sm rounded-full transition-all duration-300 font-semibold
+                ${
+                  activeTab === "tools"
+                    ? "bg-button dark:bg-button2 text-button-text shadow-md"
+                    : "text-paragraph dark:text-paragraph2 hover:text-headline2"
+                }`}
             >
               Tools
             </button>
@@ -85,41 +88,39 @@ const SkillsToolsToggle = () => {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3  ">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
           {data.map((item, i) => (
             <div
               key={i}
               className="
                 aspect-square
-                flex items-center justify-center
-                border border-gray-300
-                rounded-lg
-                bg-white
-                hover:shadow-md
-                hover:-translate-y-1
+                flex flex-col items-center justify-center
+                rounded-xl
+                border border-button/20
+                bg-background
+                dark:bg-background2/40
+                hover:scale-105
+                hover:border-button
                 transition-all duration-300
-                dark:bg-black dark:bg-opacity-20
-                
+                shadow-sm hover:shadow-md
               "
             >
-              <div className="flex flex-col items-center justify-center gap-1 ">
-                {/* ICON */}
-                <img
-                  src={item.icon}
-                  alt={item.name}
-                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
-                />
+              {/* ICON */}
+              <img
+                src={item.icon}
+                alt={item.name}
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+              />
 
-                {/* LABEL */}
-                <span className="text-sm sm:text-base text-gray-700 mt-2 dark:text-paragraph2">
-                  {item.name}
-                </span>
-              </div>
+              {/* LABEL */}
+              <span className="text-xs sm:text-sm mt-2 text-paragraph dark:text-paragraph2">
+                {item.name}
+              </span>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

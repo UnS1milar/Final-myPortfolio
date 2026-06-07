@@ -53,11 +53,38 @@ function Contacts() {
       </div>
       <div className="flex flex-row justify-center items-center mt-24">
         <div className="w-[50%]  flex-col justify-end items-center mb-32 hidden md:flex">
-          <img
-            src={contactMe}
-            className="h-[350px] w-[350px] max-lg:w-[300px] max-lg:h-[300px]"
-            alt=""
-          />
+          <div className="relative h-[350px] w-[350px] max-lg:w-[300px] max-lg:h-[300px] flex items-center justify-center">
+            {/* glow background */}
+            <div className="absolute w-full h-full rounded-full bg-gradient-to-tr from-button via-tertiary to-secondary2 opacity-25 blur-[90px]"></div>
+
+            {/* outer ring */}
+            <div className="absolute w-[88%] h-[88%] rounded-full border border-headline/20 dark:border-headline2/20"></div>
+
+            {/* main card */}
+            <div
+              className="relative w-[80%] h-[80%] rounded-full 
+    bg-background dark:bg-background2 
+    border-2 border-headline dark:border-headline2 
+    shadow-2xl flex flex-col items-center justify-center text-center px-6
+  "
+            >
+              <h2 className="text-2xl font-bold text-headline dark:text-headline2">
+                Let's Build Something
+              </h2>
+
+              <p className="text-sm mt-3 text-paragraph dark:text-paragraph2 leading-6">
+                Have a project or idea? Send me a message and let’s work
+                together.
+              </p>
+
+              {/* dots */}
+              <div className="mt-5 flex gap-2">
+                <span className="w-2 h-2 rounded-full bg-button"></span>
+                <span className="w-2 h-2 rounded-full bg-tertiary"></span>
+                <span className="w-2 h-2 rounded-full bg-secondary2"></span>
+              </div>
+            </div>
+          </div>
           <div className="flex flex-row gap-3 text-headline dark:text-background">
             <i
               onClick={() => openLink(socialLinks.facebook)}

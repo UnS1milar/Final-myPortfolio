@@ -1,44 +1,43 @@
 import Home from "./Home";
 import Nav from "./Nav";
 import Experience from "./Experience";
-import Skills from "./Skills";
 import Projects from "./Projects";
 import Contacts from "./Contacts";
 import Skills2 from "./SkillsToolsToggle";
-import Projects2 from "./Projects2";
 import { useAppContext } from "./AppContext";
 
 function App() {
   const { darkMode } = useAppContext();
+
+  const backgroundClass = darkMode
+    ? "bg-gradient-to-r from-black via-gray-900 to-black"
+    : "bg-gradient-to-r from-white via-blue-50 to-gray-50";
+
   return (
-    <div
-      className={`${
-        darkMode
-          ? "bg-gradient-to-r from-black via-gray-900 to-black"
-          : "bg-gradient-to-r from-white via-blue-50 to-gray-50"
-      }`}
-    >
+    <div className={`${backgroundClass} min-h-screen`}>
       <Nav />
 
-      <section id="home">
-        <Home />
-      </section>
+      <main>
+        <section id="home" className="scroll-mt-24">
+          <Home />
+        </section>
 
-      <section id="experience">
-        <Experience />
-      </section>
+        <section id="experience" className="scroll-mt-24">
+          <Experience />
+        </section>
 
-      <section id="skills" className="scroll-mt-24">
-        <Skills2 />
-      </section>
+        <section id="skills" className="scroll-mt-24">
+          <Skills2 />
+        </section>
 
-      <section id="projects">
-        <Projects />
-      </section>
+        <section id="projects" className="scroll-mt-24">
+          <Projects />
+        </section>
 
-      <section id="contacts">
-        <Contacts />
-      </section>
+        <section id="contacts" className="scroll-mt-24">
+          <Contacts />
+        </section>
+      </main>
     </div>
   );
 }
