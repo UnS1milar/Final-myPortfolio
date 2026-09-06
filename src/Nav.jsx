@@ -85,28 +85,28 @@ function Nav() {
 
           {/* RIGHT SIDE ACTIONS */}
           <div className="flex items-center gap-4">
-            {/* DARK MODE TOGGLE */}
+            {/* DARK MODE TOGGLE (MEDIUM / BALANCED SIZE) */}
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle theme"
-              className={`relative flex items-center w-20 h-10 rounded-full px-1
-    transition-all duration-300 ease-in-out
-    ${darkMode ? "bg-slate-800" : "bg-yellow-400"}`}
+              className={`relative flex items-center w-14 h-7 rounded-full p-1
+  transition-colors duration-300 ease-in-out
+  ${darkMode ? "bg-slate-800" : "bg-yellow-400"}`}
             >
-              {/* Left Icon */}
-              <Moon size={16} className="absolute left-3 text-gray-700" />
+              {/* Left Icon (Moon) */}
+              <Moon size={14} className="absolute left-2 text-gray-300" />
 
-              {/* Right Icon */}
-              <Sun size={16} className="absolute right-3 text-yellow-100" />
+              {/* Right Icon (Sun) */}
+              <Sun size={14} className="absolute right-2 text-yellow-800" />
 
               {/* Sliding Knob */}
               <div
-                className={`z-10 w-8 h-8 rounded-full bg-white shadow-lg
-      flex items-center justify-center
-      transition-all duration-300 ease-in-out
-      ${darkMode ? "translate-x-10" : "translate-x-0"}`}
+                className={`z-10 w-5 h-5 rounded-full bg-white shadow-md
+    transition-transform duration-300 ease-in-out
+    ${darkMode ? "translate-x-7" : "translate-x-0"}`}
               />
             </button>
+
             {/* CONTACT BUTTON */}
             <a
               href="#contacts"

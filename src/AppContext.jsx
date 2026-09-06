@@ -30,7 +30,7 @@ export const AppProvider = ({ children }) => {
     ems: "https://fullstack-ems-sandy.vercel.app/",
     resume: "https://resume-builder-client-roan.vercel.app/",
     resumeView:
-      "https://drive.google.com/file/d/1HUYGEb9KlkRtPR4QmWEk-bSP9fRR-4VA/view?usp=sharing",
+      "https://drive.google.com/file/d/1rdzc5olHrKCiMxmQ6Di5WScBhyxr43zd/view?usp=sharing",
   };
 
   return (

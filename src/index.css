@@ -172,35 +172,26 @@ input:checked + label .moonlight {
   color: #0077b5;
   transform: translateY(-10px);
 }
+
+/* Home */
 .hideHome {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100px);
-  transition: all 2s;
+  transform: translateY(30px); /* Changed from translateX(-100px) */
+  transition: all 1.2s ease-out;
 }
-.hideHome:nth-child(2) {
-  transition-delay: 200ms;
-}
-.hideHome:nth-child(3) {
-  transition-delay: 400ms;
-}
-.hideHome:nth-child(4) {
-  transition-delay: 600ms;
-}
-.hideHome:nth-child(5) {
-  transition-delay: 800ms;
-}
-.hideHome:nth-child(6) {
-  transition-delay: 1000ms;
-}
+
 .showHome {
   opacity: 1;
   filter: blur(0);
-  transform: translateX(0px);
+  transform: translateY(0px);
 }
 @media (prefers-reduced-motion) {
   .hideHome {
     transition: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
 

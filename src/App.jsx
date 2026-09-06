@@ -18,23 +18,23 @@ function App() {
       <Nav />
 
       <main>
-        <section id="home" className="scroll-mt-24">
+        <section id="home">
           <Home />
         </section>
 
-        <section id="experience" className="scroll-mt-24">
+        <section id="experience">
           <Experience />
         </section>
 
-        <section id="skills" className="scroll-mt-24">
+        <section id="skills">
           <Skills2 />
         </section>
 
-        <section id="projects" className="scroll-mt-24">
+        <section id="projects">
           <Projects />
         </section>
 
-        <section id="contacts" className="scroll-mt-24">
+        <section id="contacts">
           <Contacts />
         </section>
       </main>
