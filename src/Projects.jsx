@@ -38,7 +38,7 @@ function Projects() {
       image: project2,
       links: {
         live: socialLinks?.ems || "#",
-        github: "https://github.com/your-username/ems",
+        github: "https://github.com/UnS1milar/Fullstack-ems.git",
         figma: "https://figma.com/@your-design",
       },
     },
@@ -56,7 +56,7 @@ function Projects() {
       image: project3,
       links: {
         live: socialLinks?.resume || "#",
-        github: "https://github.com/your-username/resume-builder",
+        github: "https://github.com/UnS1milar/resume-builder",
         figma: "https://figma.com/@your-design",
       },
     },
